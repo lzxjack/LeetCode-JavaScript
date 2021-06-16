@@ -1,0 +1,1 @@
+const stoneGame = piles => true;
