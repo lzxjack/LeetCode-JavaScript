@@ -4,12 +4,8 @@ const frequencySort = s => {
     const map = new Map();
 
     // 遍历s，创建map
-    for (let i = 0; i < s.length; i++) {
-        if (map.get(s[i])) {
-            map.set(s[i], map.get(s[i]) + 1);
-        } else {
-            map.set(s[i], 1);
-        }
+    for (let char of s) {
+        map.set(char, (map.get(char) || 0) + 1);
     }
 
     // map根据value排序，创建mapSort
