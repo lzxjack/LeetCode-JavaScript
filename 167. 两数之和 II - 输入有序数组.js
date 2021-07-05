@@ -11,8 +11,8 @@
 
 // 双指针
 const twoSum = (nums, target) => {
-    let left = 0;
-    let right = nums.length - 1;
+    // 定义左右双指针
+    let [left, right] = [0, nums.length - 1];
     while (left < right) {
         if (nums[left] + nums[right] > target) {
             // 太大了，要小一点，则right左移一位
