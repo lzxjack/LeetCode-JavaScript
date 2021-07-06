@@ -10,6 +10,7 @@ const uniquePaths = (m, n) => {
     for (let j = 0; j < n; j++) {
         dp[0][j] = 1;
     }
+    console.log(dp);
     for (let i = 1; i < m; i++) {
         for (let j = 1; j < n; j++) {
             dp[i][j] = dp[i - 1][j] + dp[i][j - 1];
