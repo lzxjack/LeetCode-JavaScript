@@ -21,7 +21,7 @@
 // 输出: 0
 
 // 双指针
-var lengthOfLongestSubstring = function (s) {
+const lengthOfLongestSubstring = s => {
     // 左指针
     let left = 0;
     // 初始化最大长度
@@ -42,7 +42,7 @@ var lengthOfLongestSubstring = function (s) {
     return maxlen;
 };
 
-var lengthOfLongestSubstring2 = function (s) {
+const lengthOfLongestSubstring = s => {
     // 滑动窗口初始化为一个空数组
     let arr = [];
     // 要返回的字符串的长度
@@ -56,7 +56,7 @@ var lengthOfLongestSubstring2 = function (s) {
             arr.splice(0, index + 1);
         }
         // 在窗口右边放进新的字符
-        arr.push(s.charAt(i));
+        arr.push(s[i]);
         // 更新下最大值
         max = Math.max(arr.length, max);
     }
