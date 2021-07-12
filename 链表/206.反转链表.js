@@ -1,11 +1,18 @@
-var reverseList = function(head) {
-    let p1=head;
-    let p2=null;
-    while(p1){
-        const tmp=p1.next;
-        p1.next=p2;
-        p2=p1;
-        p1=tmp;
+const reverseList = head => {
+    // 定义cur指向头部
+    // pre指向头部前面的null
+    let [cur, pre] = [head, null];
+    // 遍历链表
+    while (cur) {
+        // 定义next为cur下一个
+        const next = cur.next;
+        // cur的指向改为pre
+        cur.next = pre;
+        // pre改为当前cur的指向
+        pre = cur;
+        // cur的指向改为next的指向
+        cur = next;
     }
-    return p2;
+    // 遍历结束，cur指向null，返回pre
+    return pre;
 };
