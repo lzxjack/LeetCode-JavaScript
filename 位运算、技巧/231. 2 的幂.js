@@ -1,3 +1,1 @@
-const isPowerOfTwo = n => {
-    return n > 0 && (n & (n - 1)) === 0;
-};
+const isPowerOfTwo = n => n > 0 && (n & (n - 1)) === 0;
