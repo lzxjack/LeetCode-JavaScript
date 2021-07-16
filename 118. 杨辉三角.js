@@ -1,5 +1,4 @@
 const generate = numRows => {
-    if (numRows === 1) return [[1]];
     const res = [[1]];
     // i代表行，j代表每行的元素
     for (let i = 1; i < numRows; i++) {
@@ -21,5 +20,3 @@ const generate = numRows => {
     }
     return res;
 };
-
-console.log(generate(1));

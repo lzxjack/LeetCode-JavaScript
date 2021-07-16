@@ -8,7 +8,8 @@
 
 const twoSum = (nums, target) => {
     const map = new Map();
-    for (let i = 0; i < nums.length; i++) {
+    const len = nums.length;
+    for (let i = 0; i < len; i++) {
         // n:当前的数
         const n = nums[i];
         // n2:需要寻找的能配对的数

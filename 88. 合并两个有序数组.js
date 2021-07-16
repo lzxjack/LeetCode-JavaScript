@@ -1,23 +1,14 @@
-let merge = function (nums1, m, nums2, n) {
-    let index1 = m - 1,
-        index2 = n - 1,
-        index = m + n - 1;
-    while (index2 >= 0) {
-        if (index1 < 0) {
-            nums1[index] = nums2[index2];
-            index--;
-            index2--;
-            continue;
-        }
-        // nums1[index--] = nums1[index1] >= nums2[index2] ? nums1[index1--] : nums2[index2--];
-        if (nums1[index1] >= nums2[index2]) {
-            nums1[index] = nums1[index1];
-            index--;
-            index1--;
+const merge = (nums1, m, nums2, n) => {
+    let [p1, p2, k] = [m - 1, n - 1, m + n - 1];
+    while (p1 >= 0 || p2 >= 0) {
+        if (p1 < 0) {
+            nums1[k--] = nums2[p2--];
+        } else if (p2 < 0) {
+            nums1[k--] = nums1[p1--];
+        } else if (nums1[p1] < nums2[p2]) {
+            nums1[k--] = nums2[p2--];
         } else {
-            nums1[index] = nums2[index2];
-            index--;
-            index2--;
+            nums1[k--] = nums1[p1--];
         }
     }
     return nums1;
