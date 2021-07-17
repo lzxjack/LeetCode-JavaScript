@@ -1,11 +1,11 @@
 const firstUniqChar = s => {
     const len = s.length;
-    const map = {};
+    const map = new Map();
     for (let i = 0; i < len; i++) {
-        map[s[i]] = map[s[i]] ? map[s[i]] + 1 : 1;
+        map.set(s[i], (map.get(s[i]) || 0) + 1);
     }
     for (let i = 0; i < len; i++) {
-        if (map[s[i]] === 1) return i;
+        if (map.get(s[i]) === 1) return i;
     }
     return -1;
 };
