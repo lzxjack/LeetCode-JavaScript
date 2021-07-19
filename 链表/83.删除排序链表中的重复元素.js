@@ -9,10 +9,13 @@
 // 输入: 1->1->2->3->3
 // 输出: 1->2->3
 
-var deleteDuplicates = function(head) {
+const deleteDuplicates = head => {
+    // 定义指针指向头部
     let p = head;
+    // 当前有值、且下一节点有值
     while (p && p.next) {
         if (p.val === p.next.val) {
+            // 如果当前值等于下一节点的值，删除下一节点
             p.next = p.next.next;
         } else {
             p = p.next;
