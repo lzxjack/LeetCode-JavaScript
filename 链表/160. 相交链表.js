@@ -3,8 +3,7 @@
 // 如果没有交点，则第二次遍历结束都是null，遍历结束，返回null
 
 const getIntersectionNode = (A, B) => {
-    let pA = A,
-        pB = B;
+    let [pA, pB] = [A, B];
     while (pA !== pB) {
         pA = pA === null ? B : pA.next;
         pB = pB === null ? A : pB.next;
