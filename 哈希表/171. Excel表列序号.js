@@ -31,7 +31,7 @@ const titleToNumber = str => {
     const len = str.length;
     for (let i = 0; i < len; i++) {
         // 根据map取得字母对应的数字
-        res += map[str[i]] * Math.pow(26, len - i - 1);
+        res += map[str[i]] * 26 ** (len - i - 1);
     }
     return res;
 };
