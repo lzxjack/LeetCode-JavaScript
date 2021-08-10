@@ -35,8 +35,7 @@ const isSymmetric = root => {
                 // 值不相等，返回false
                 if (left.val !== right.val) return false;
                 // 将两个节点的左右节点，按照对应关系入队
-                queue.push(left.left, right.right);
-                queue.push(left.right, right.left);
+                queue.push(left.left, right.right, left.right, right.left);
             }
         }
     }
