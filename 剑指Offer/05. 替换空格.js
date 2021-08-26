@@ -1,1 +1,1 @@
-const replaceSpace = s => s.replace(/ /g, '%20');
+const replaceSpace = s => s.split(' ').join('%20');
