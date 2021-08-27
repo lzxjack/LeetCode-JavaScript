@@ -62,9 +62,9 @@ const MedianFinder = function () {
             return null;
         }
     }
-    // 最大堆
-    this.A = new Heap();
     // 最小堆
+    this.A = new Heap();
+    // 最大堆
     this.B = new Heap((x, y) => x < y);
 };
 
@@ -83,6 +83,8 @@ MedianFinder.prototype.addNum = function (num) {
 };
 
 MedianFinder.prototype.findMedian = function () {
+    // 若总和为偶数，返回两个堆顶的平均数
+    // 若总和为奇数，返回A的堆顶
     return this.A.container.length === this.B.container.length
         ? (this.A.peek() + this.B.peek()) / 2
         : this.A.peek();
