@@ -1,7 +1,6 @@
 const search = (nums, target) => {
     // 定义左右两个索引
-    let low = 0,
-        high = nums.length - 1;
+    let [low, high] = [0, nums.length - 1];
     while (low <= high) {
         // mid为中间索引
         const mid = (low + high) >> 1;
