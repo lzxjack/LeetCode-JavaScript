@@ -7,5 +7,3 @@ const printNumbers = n => {
     return res;
 };
 printNumbers(1);
-
-// console.log(2 ** 3);
