@@ -1,3 +1,1 @@
-const canWinNim = n => {
-    return n % 4 !== 0;
-};
+const canWinNim = n => n % 4;
