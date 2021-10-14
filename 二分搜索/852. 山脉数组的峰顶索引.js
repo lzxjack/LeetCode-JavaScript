@@ -1,13 +1,16 @@
 const peakIndexInMountainArray = arr => {
-    let low = 0,
-        high = arr.length - 1;
+    let [low, high] = [0, arr.length - 1];
     while (low <= high) {
         const mid = (low + high) >> 1;
-        if (arr[mid - 1] > arr[mid]) {
+        const midItem = arr[mid];
+        if (arr[mid - 1] > midItem) {
+            // 山脉在前半区
             high = mid - 1;
-        } else if (arr[mid + 1] > arr[mid]) {
+        } else if (arr[mid + 1] > midItem) {
+            // 山脉在后半区
             low = mid + 1;
-        } else if (arr[mid] > arr[mid - 1] && arr[mid] > arr[mid + 1]) {
+        } else if (midItem > arr[mid - 1] && midItem > arr[mid + 1]) {
+            // midItem比两边大，mid是山脉
             return mid;
         }
     }
