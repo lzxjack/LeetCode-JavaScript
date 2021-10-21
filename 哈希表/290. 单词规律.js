@@ -2,29 +2,16 @@ const wordPattern = (pattern, s) => {
     const sArr = s.split(' ');
     const len = pattern.length;
     if (len !== sArr.length) return false;
-    const ps = {};
-    const sp = {};
+    const ps = new Map();
+    const sp = new Map();
     for (let i = 0; i < len; i++) {
         const x = pattern[i];
         const y = sArr[i];
-        if ((ps[x] && ps[x] !== y) || (sp[y] && sp[y] !== x)) return false;
-        ps[x] = y;
-        sp[y] = x;
+        // 若其中有一个值作为键对应的值，与另一个值不相等，就不符合要求
+        if ((ps.get(x) && ps.get(x) !== y) || (sp.get(y) && sp.get(y) !== x)) return false;
+        // 将值作为键，另一个作为值存储
+        ps.set(x, y);
+        sp.set(y, x);
     }
     return true;
 };
-
-// ### 代码
-// const isIsomorphic = (s, t) => {
-//     const st = {};
-//     const ts = {};
-//     const len = s.length;
-//     for (let i = 0; i < len; i++) {
-//         const x = s[i];
-//         const y = t[i];
-//         if ((st[x] && st[x] !== y) || (ts[y] && ts[y] !== x)) return false;
-//         st[x] = y;
-//         ts[y] = x;
-//     }
-//     return true;
-// };
