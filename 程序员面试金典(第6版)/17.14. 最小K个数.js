@@ -73,9 +73,3 @@ const smallestK = (arr, k) => {
     }
     return res;
 };
-
-// const smallestK = (arr, k) => {
-//     arr.sort((a, b) => a - b);
-//     arr.length = k;
-//     return arr;
-// };
