@@ -2,10 +2,12 @@ class MinStack {
     constructor() {
         this.stack = [];
     }
-    push(x) {
+    push(val) {
+        // 若栈空，最小值就是val
+        // 若栈不为空，最小值是栈顶元素的min属性和val的较小者
         this.stack.push({
-            val: x,
-            min: this.stack.length ? Math.min(x, this.getMin()) : x,
+            val,
+            min: this.stack.length ? Math.min(val, this.getMin()) : val,
         });
     }
     pop() {
@@ -15,6 +17,7 @@ class MinStack {
         return this.stack[this.stack.length - 1].val;
     }
     getMin() {
+        // 返回栈顶元素的min属性
         return this.stack[this.stack.length - 1].min;
     }
 }
