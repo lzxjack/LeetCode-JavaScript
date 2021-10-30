@@ -6,7 +6,7 @@ const combine = (n, k) => {
         if (path.length === k) {
             // 如果路径长度为k，满足题目要求了
             // 将path推入答案res
-            res.push(path.slice());
+            res.push([...path]);
             return;
         }
         for (let i = start; i <= n; i++) {
