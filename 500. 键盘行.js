@@ -10,7 +10,7 @@ const findWords = words => {
                 return word
                     .toLowerCase()
                     .split('')
-                    .every(char => key.indexOf(char) !== -1);
+                    .every(char => key.includes(char));
             })
         );
     });
