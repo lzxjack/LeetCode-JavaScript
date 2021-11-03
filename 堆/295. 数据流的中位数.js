@@ -62,9 +62,9 @@ const MedianFinder = function () {
             return null;
         }
     }
-    // 最小堆
-    this.A = new Heap();
     // 最大堆
+    this.A = new Heap();
+    // 最小堆
     this.B = new Heap((x, y) => x < y);
 };
 
