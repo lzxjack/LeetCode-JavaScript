@@ -1,8 +1,13 @@
 const reversePrint = head => {
-    const array = [];
+    const stack = [];
+    const res = [];
     while (head) {
-        array.unshift(head.val);
+        stack.push(head.val);
         head = head.next;
     }
-    return array;
+    const len = stack.length;
+    for (let i = 0; i < len; i++) {
+        res.push(stack.pop());
+    }
+    return res;
 };

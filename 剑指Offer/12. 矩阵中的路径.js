@@ -21,7 +21,7 @@ const exist = (board, word) => {
         return res;
     };
 
-    // 从第一个字符出开始dfs
+    // 从第一个匹配的字符处开始dfs
     for (let i = 0; i < m; i++) {
         for (let j = 0; j < n; j++) {
             if (dfs(i, j, 0)) return true;

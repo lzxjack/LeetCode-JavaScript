@@ -1,5 +1,5 @@
 const buildTree = (preorder, inorder) => {
-    if (preorder.length === 0) return null;
+    if (!preorder.length) return null;
     if (preorder === 1) return new TreeNode(preorder[0]);
 
     // 先序遍历的第一个就是根节点
