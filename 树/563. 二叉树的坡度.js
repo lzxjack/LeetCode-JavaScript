@@ -7,13 +7,13 @@ const findTilt = function (root) {
         // 如果空节点，节点和为0
         if (!node) return 0;
 
-        // 当前递归要做的事：计算当前数总节点和
+        // 当前递归要做的事：求出当前树的坡度（左子树节点和+右子树节点和）
         // 计算节点的左子树节点和
-        let left = sum(node.left);
+        const left = sum(node.left);
         // 计算节点的右子树节点和
-        let right = sum(node.right);
+        const right = sum(node.right);
         // 定义当前节点的坡度
-        let slope = Math.abs(left - right);
+        const slope = Math.abs(left - right);
         // 加到总坡度上
         res += slope;
 
