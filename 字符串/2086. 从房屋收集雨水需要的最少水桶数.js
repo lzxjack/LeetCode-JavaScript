@@ -2,8 +2,7 @@ const minimumBuckets = street => {
     // 一些特殊情况
     if (street.indexOf('HHH') !== -1) return -1;
     if (street === 'H') return -1;
-    if (street.indexOf('HH') === 0) return -1;
-    if (street[street.length - 1] === 'H' && street[street.length - 2] === 'H') return -1;
+    if (street.startsWith('HH') || street.endsWith('HH')) return -1;
     let res = 0;
     // 先统计H.H的个数
     const arr = street.split('H.H');
