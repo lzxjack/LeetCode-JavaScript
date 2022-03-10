@@ -1,19 +1,31 @@
 const preorder = root => {
-    if (!root) return [];
-    const res = [];
-    // 根节点入栈
-    const stack = [root];
-    // 栈还有值的时候
-    while (stack.length) {
-        // 栈顶元素出栈
-        const n = stack.pop();
-        // 将栈顶元素推入res队列
-        res.push(n.val);
-        let len = n.children.length;
-        // 如果栈顶元素有子树，子树从右开始，依次推入栈
-        while (len--) {
-            stack.push(n.children[len]);
-        }
+  if (!root) return [];
+  const res = [];
+  const stack = [root];
+
+  while (stack.length) {
+    const node = stack.pop();
+    res.push(node.val);
+    let len = node.children.length;
+    while (len) {
+      stack.push(node.children[len - 1]);
+      len--;
     }
-    return res;
+  }
+
+  return res;
 };
+
+// const preorder = root => {
+//   const res = [];
+//   const dfs = root => {
+//     if (!root) return;
+//     res.push(root.val);
+//     root.children.forEach(item => {
+//       dfs(item);
+//     });
+//   };
+
+//   dfs(root);
+//   return res;
+// };
