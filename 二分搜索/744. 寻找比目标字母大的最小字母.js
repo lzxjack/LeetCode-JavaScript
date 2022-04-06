@@ -1,16 +1,19 @@
 const nextGreatestLetter = (letters, target) => {
-    const targetNum = target.charCodeAt(0);
-    const len = letters.length;
-    let low = 0,
-        high = letters.length - 1;
-    while (low <= high) {
-        const mid = (low + high) >> 1;
-        const item = letters[mid].charCodeAt(0);
-        if (item > targetNum) {
-            high = mid - 1;
-        } else if (item <= targetNum) {
-            low = mid + 1;
-        }
+  const targetNum = target;
+
+  const len = letters.length;
+
+  let [left, right] = [0, len - 1];
+
+  while (left <= right) {
+    const mid = (left + right) >> 1;
+    const item = letters[mid];
+    if (item > targetNum) {
+      right = mid - 1;
+    } else {
+      left = mid + 1;
     }
-    return low >= len ? letters[0] : letters[low];
+  }
+
+  return left >= len ? letters[0] : letters[left];
 };
